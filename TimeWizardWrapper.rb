@@ -20,14 +20,10 @@ class TimeWizardWrapper
       time.teleport_file("#{filename}")
     end
 
-    #Next: Make arguments  increment amount on each iteration
-    #Executes all files in current directory
     def run_all(days = "01", months = "09")
       Dir.glob('*.java') do |filename|
         run(filename, days, months) 
-        days = days.to_i
-        days += 1
-        days = days.to_s
+        days.next!
       end
     end
 
