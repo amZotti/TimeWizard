@@ -7,7 +7,7 @@ class TimeWizardWrapper
   class << self
 
     #ruby -r "./TimeWizard.rb" -e "runTimeWizard('Bool.java')"
-    def run(filename, days = "01", months = "01")
+    def run(filename, days = "01", months = "01", message = "Create #{filename}")
 
       time = TimeWizard.new(
         month = months.to_s,
@@ -17,7 +17,7 @@ class TimeWizardWrapper
         seconds()
       )
 
-      time.teleport_file("#{filename}")
+      time.teleport_file("#{filename}", "#{message}")
     end
 
     def run_all(days = "01", months = "09")

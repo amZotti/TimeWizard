@@ -23,14 +23,14 @@ class TimeWizard
     system("git add #{name}")
   end
 
-  def commit_file name
+  def commit_file(name, message)
     ENV['GIT_AUTHOR_DATE']="#{@date}"
     ENV['GIT_COMMITTER_DATE']="#{@date}"
-    system("git commit -m 'Completed #{name} challenge'")
+    system("git commit -m \"#{message}\"")
   end
 
-  def teleport_file name
-    add_file name
-    commit_file name
+  def teleport_file(name, message)
+    add_file(name)
+    commit_file(name, message)
   end
 end
