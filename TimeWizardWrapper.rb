@@ -21,7 +21,7 @@ class TimeWizardWrapper
     end
 
     def run_all(days = "01", months = "09")
-      Dir.glob('*.java') do |filename|
+      Dir.glob('*.*') do |filename|
         run(filename, days, months) 
         days.next!
       end

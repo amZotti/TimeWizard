@@ -14,20 +14,15 @@ I completed the work. I searched for an easy way to manupulate timestamps in Git
 but shockingly there were none. From there on I decided to create TimeWizard
 </p>
 
-This is configured to only work if the TimeWizard directory is located in the
-home directory. You must add this directory to your system's root path so it can
-find the alias correctly. You may also have to type 'sudo chmod 755 timewizard' from
-the TimeWizard directory in order to set permissions.
+<h2>Setup</h2>
+<ol>
+  <li>Add TimeWizard to home directory</li>
+  <li>Add TimeWizard directory to your root path</li>
+  <li>Use aliases <code>timewizard</code> and <code>timewizard_all</code> to commit a
+single file or an entire directory respectively</li>
+</ol>
 
-<h3>Defaults</h3>
-The following are set by default and need to be changed manually in
-TimeWizard.rb:
-<ul>
-  <li>Default year: "2014"</li>
-  </li>Default commit message: "Completed #{name} challenge"</li>
-</ul>
-
-<h3>timewizard Usage</h3>
+<h3>timewizard</h3>
 <b>Alias:</b>
 <code>timewizard (full file name) (day number) (month number)</code>
 
@@ -35,7 +30,7 @@ TimeWizard.rb:
   <code>timewizard "README.md" 28 8</code>
 <a href="http://imgur.com/2vB9CjM"><img src="http://i.imgur.com/2vB9CjM.png" title="source: imgur.com" /></a>
 
-<h3>timewizard_all Usage<h3>
+<h3>timewizard_all<h3>
 
 <b>Alias:</b>
 <code>timewizard_all (day number) (month number)</code>
@@ -45,7 +40,7 @@ TimeWizard.rb:
 <a href="http://imgur.com/R9bmYiT"><img src="http://i.imgur.com/R9bmYiT.png" title="source: imgur.com" /></a>
 <a href="https://github.com/amZotti/Java-Challenges">Success!</a>
 
-<p>The alias timewizard_all will process all files of a given file type
+<p>timewizard_all will process all files of a given file type
 within whatever directory you are currently in. All these files will be
 committed on their own day.</p> 
 
@@ -62,3 +57,11 @@ days += (number you wish you increment days by)
 
 days = days.to_s
 </pre>
+
+<h3>Defaults</h3>
+The following are set by default and need to be changed manually in
+TimeWizard.rb:
+<ul>
+  <li>Default year: "2014"</li>
+  <li>Default commit message: "Completed #{name} challenge"</li>
+</ul>
