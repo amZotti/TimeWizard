@@ -3,10 +3,9 @@ require '~/TimeWizard/TimeWizard.rb'
 class TimeWizardWrapper
   class << self
     def create_time_wizard(days, months)
-      time_wizard = TimeWizard.new
-      (
-        month = months.to_s,
-        day = days.to_s,
+      time_wizard = TimeWizard.new(
+        months.to_s,
+        days.to_s,
         hours(),
         minutes(),
         seconds()
