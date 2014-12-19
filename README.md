@@ -24,7 +24,8 @@ single file or an entire directory respectively</li>
 
 <h3>timewizard</h3>
 <b>Alias:</b>
-<code>timewizard (full file name) (day number) (month number)</code>
+<code>timewizard (full file name) (day number) (month number) "commit message
+(optional)"</code>
 
 <b>Example:</b>
   <code>timewizard "README.md" 28 8</code>
@@ -58,10 +59,25 @@ days += (number you wish you increment days by)
 days = days.to_s
 </pre>
 
+<h3>timewizard_commit_tracked</h3>
+<b>Alias:</b>
+<code>timewizard_commit_tracked (day number) (month number) "Commit message
+(optional)"</code>
+
+<b>Example:</b>
+<code>timewizard_commit_tracked 02 10 "Initialize ArrayBag ADT and MagicSquare
+puzzle"</code>
+<a href="http://imgur.com/IivV4Jh"><img src="http://i.imgur.com/IivV4Jh.png" title="source: imgur.com" /></a>
+
+<p>It is very common to want to add multiple files into a single commit.
+Using the new <code>timewizard_commit_tracked</code> alias we can do just that! All
+you need to do is stage all the files you want to timewizard into a
+commit and use the special alias noted below.</p>
+
 <h3>Defaults</h3>
 The following are set by default and need to be changed manually in
 TimeWizard.rb:
 <ul>
   <li>Default year: "2014"</li>
-  <li>Default commit message: "Completed #{name} challenge"</li>
+  <li>Default commit message: "Created #{filename}"</li>
 </ul>

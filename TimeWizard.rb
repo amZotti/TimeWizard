@@ -16,7 +16,10 @@ class TimeWizard
   end
 
   def generate_date
-    @year + "-" + @month + "-" + @day + " " + @hour + ":" + @minutes + ":" + @seconds + " " + @timezone
+    @year + "-" + @month + "-" +
+      @day + " " + @hour + ":" +
+      @minutes + ":" + @seconds +
+      " " + @timezone
   end
 
   def add_file name

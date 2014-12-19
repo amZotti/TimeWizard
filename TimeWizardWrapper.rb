@@ -1,47 +1,34 @@
 require '~/TimeWizard/TimeWizard.rb'
 
 class TimeWizardWrapper
-
-  #Static methods are really instance methods of class's eigenclass
-  #We need to do this so we can alias to a static method
   class << self
-
-    #ruby -r "./TimeWizard.rb" -e "runTimeWizard('Bool.java')"
-    def run(filename, days = "01", months = "01", message = "")
-
-      time = TimeWizard.new(
+    def create_time_wizard(days, months)
+      time_wizard = TimeWizard.new
+      (
         month = months.to_s,
         day = days.to_s,
         hours(),
         minutes(),
         seconds()
       )
+      time_wizard
+    end
 
-      if message.empty?
-        message = "Create #{filename}"
-      end
-      time.teleport_file("#{filename}", "#{message}")
+    def run(filename, days = "01", months = "01", message = "")
+      time_wizard = create_time_wizard(days, months)
+      if message.empty? then message = "Create #{filename}" end
+      time_wizard.teleport_file("#{filename}", "#{message}")
     end
 
     def commitTracked(days = "01", months = "01", message ="")
-
-      time = TimeWizard.new(
-        month = months.to_s,
-        day = days.to_s,
-        hours(),
-        minutes(),
-        seconds()
-      )
-
-      if message.empty?
-        message = "Create files"
-      end
-      time.commit_file("#{message}")
+      time_wizard = create_time_wizard(days, months)
+      if message.empty? then message = "Create files" end
+      time_wizard.commit_file("#{message}")
     end
 
     def run_all(days = "01", months = "09")
       Dir.glob('*.*') do |filename|
-        run(filename, days, months) 
+        run(filename, days, months)
         days.next!
       end
     end
