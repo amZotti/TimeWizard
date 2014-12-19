@@ -19,14 +19,6 @@ home directory. You must add this directory to your system's root path so it can
 find the alias correctly. You may also have to type 'sudo chmod 755 timewizard' from
 the TimeWizard directory in order to set permissions.
 
-<h3>Usage</h3>
-<b>Aliases:</b>
-<code>timewizard (full file name) (day number) (month number)</code>
-
-<b>Example:</b>
-  <code>timewizard "Bool.java" 25 9</code>
-Would get committed on September 25th.
-
 <h3>Defaults</h3>
 The following are set by default and need to be changed manually in
 TimeWizard.rb:
@@ -35,10 +27,38 @@ TimeWizard.rb:
   </li>Default commit message: "Completed #{name} challenge"</li>
 </ul>
 
-<h3>Things to work on:</h3>
-Allow users to include optional commit message from command line
-Allow users to add/commit multiple files at once
+<h3>timewizard Usage</h3>
+<b>Alias:</b>
+<code>timewizard (full file name) (day number) (month number)</code>
 
-<h3>Live Examples</h3>
-<a href="https://github.com/amZotti/Java-Challenges">My Sweet Java
-Challenges</a>
+<b>Example:</b>
+  <code>timewizard "README.md" 28 8</code>
+<a href="http://imgur.com/2vB9CjM"><img src="http://i.imgur.com/2vB9CjM.png" title="source: imgur.com" /></a>
+
+<h3>timewizard_all Usage<h3>
+
+<b>Alias:</b>
+<code>timewizard_all (day number) (month number)</code>
+
+<b>Example:</b>
+  <code>timewizard 1 10</code>
+<a href="http://imgur.com/R9bmYiT"><img src="http://i.imgur.com/R9bmYiT.png" title="source: imgur.com" /></a>
+<a href="https://github.com/amZotti/Java-Challenges">Success!</a>
+
+<p>The alias timewizard_all will process all files of a given file type
+within whatever directory you are currently in. All these files will be
+committed on their own day.</p> 
+
+<p>If a user wants to disable auto-incrementing days they can just comment
+out or delete the line in TimeWizardWrapper "days.next!". </p>
+
+<p>If a user wants to specify the number of days they wish to increment by
+they can do this by replacing "days.next!" with the following code:</p>
+
+<pre>
+days = days.to_i
+
+days += (number you wish you increment days by)
+
+days = days.to_s
+</pre>
