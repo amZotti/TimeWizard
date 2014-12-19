@@ -23,7 +23,7 @@ class TimeWizard
     system("git add #{name}")
   end
 
-  def commit_file(name, message)
+  def commit_file(message)
     ENV['GIT_AUTHOR_DATE']="#{@date}"
     ENV['GIT_COMMITTER_DATE']="#{@date}"
     system("git commit -m \"#{message}\"")
@@ -31,6 +31,6 @@ class TimeWizard
 
   def teleport_file(name, message)
     add_file(name)
-    commit_file(name, message)
+    commit_file(message)
   end
 end

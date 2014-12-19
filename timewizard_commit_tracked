@@ -1,0 +1,2 @@
+day="$1"; month="$2"; message=""$3""
+ruby -r "~/TimeWizard/TimeWizardWrapper.rb" -e "TimeWizardWrapper.commitTracked('$day', '$month', '$message')"

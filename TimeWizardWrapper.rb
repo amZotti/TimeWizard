@@ -17,11 +17,26 @@ class TimeWizardWrapper
         seconds()
       )
 
-      if (message.empty?)
+      if message.empty?
         message = "Create #{filename}"
       end
-
       time.teleport_file("#{filename}", "#{message}")
+    end
+
+    def commitTracked(days = "01", months = "01", message ="")
+
+      time = TimeWizard.new(
+        month = months.to_s,
+        day = days.to_s,
+        hours(),
+        minutes(),
+        seconds()
+      )
+
+      if message.empty?
+        message = "Create files"
+      end
+      time.commit_file("#{message}")
     end
 
     def run_all(days = "01", months = "09")
