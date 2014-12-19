@@ -1,6 +1,6 @@
 class TimeWizard
   YEAR = "2014"
-  #START_DATE = "2014-09-01 HH:MM:SS -0800"
+  #FORMAT "2014-09-01 HH:MM:SS -0800"
   def initialize(month="01", day="01", hour = "00",
                  minutes = "00", seconds = "00",
                  timezone = "-0800")
