@@ -1,0 +1,2 @@
+day="$1"; month="$2";
+ruby -r "~/TimeWizard/TimeWizardWrapper.rb" -e "TimeWizardWrapper.run_all('$day', '$month')"
