@@ -1,9 +1,10 @@
 class TimeWizard
+  YEAR = "2014"
   #START_DATE = "2014-09-01 HH:MM:SS -0800"
-  def initialize(year = "2014", month="01", day="01", hour = "00",
+  def initialize(month="01", day="01", hour = "00",
                  minutes = "00", seconds = "00",
                  timezone = "-0800")
-    @year = year
+    @year = YEAR
     @month = month
     @day = day
     @hour = hour
@@ -15,9 +16,6 @@ class TimeWizard
   end
 
   def generate_date
-    puts "hours: #{@hour}"
-    puts "minutes: #{@minutes}"
-    puts "seconds: #{@seconds}"
     @year + "-" + @month + "-" + @day + " " + @hour + ":" + @minutes + ":" + @seconds + " " + @timezone
   end
 
@@ -32,20 +30,21 @@ class TimeWizard
   end
 
   def teleport_file name
-    generate_date
     add_file name
     commit_file name
   end
 end
 
 #ruby -r "./TimeWizard.rb" -e "runTimeWizard('Bool.java')"
-def runTimeWizard(file, months = "09", days = "01")
+def runTimeWizard(file, days = "01", months = "09")
+
   time = TimeWizard.new(
-    month = months,
-    day = days,
-    hour = hours(),
-    minutes = minutes(),
-    seconds = seconds())
+    month = months.to_s,
+    day = days.to_s,
+    hours(),
+    minutes(),
+    seconds()
+  )
 
   time.teleport_file("#{file}")
 end
@@ -53,6 +52,7 @@ end
 def minutes
   (rand(58) + 1).to_s
 end
+
 alias :seconds :minutes
 
 def hours
