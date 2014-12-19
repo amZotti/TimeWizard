@@ -30,7 +30,7 @@ single file or an entire directory respectively</li>
   <code>timewizard "README.md" 28 8</code>
 <a href="http://imgur.com/2vB9CjM"><img src="http://i.imgur.com/2vB9CjM.png" title="source: imgur.com" /></a>
 
-<h3>timewizard_all<h3>
+<h3>timewizard_all</h3>
 
 <b>Alias:</b>
 <code>timewizard_all (day number) (month number)</code>
