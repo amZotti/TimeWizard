@@ -1,4 +1,4 @@
-require './TimeWizard.rb'
+require '~/TimeWizard/TimeWizard.rb'
 
 class TimeWizardWrapper
 

@@ -1,0 +1,2 @@
+filename="$1"; day="$2"; month="$3";
+ruby -r "./TimeWizardWrapper.rb" -e "TimeWizardWrapper.run('$filename', '$day', '$month')"
