@@ -3,9 +3,9 @@
 
 <h2>Purpose</h2>
 <p>While taking a Data Structures and Algorithms class I ran into an interesting
-problem. I was creating high quality work that I would deffinetely want to be
+problem. I was creating high quality work that I would definitely want to be
 able to reference later on, but due to the political nature of academia I was
-unable to open source my content at that time. I decided I would go head, do my
+unable to open source my content at that time. I decided I would go ahead, do my
 coursework, and then just commit it later</p>
 
 <p>A few months later my course was over and I wanted to commit my work. But
